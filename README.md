@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+<h1>UMC project : PLACE 🎱</h1>
+<h3>(2023.07 ~ 2023.08)</h3><br/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1️⃣ 프로젝트 환경설정<br/><br/>
+폴더를 하나 만드신 후, 폴더의 경로에서 터미널에 ```git clone [레포지토리 url]``` 를 실행하시면 됩니다.<br/>
+그리고 place 폴더 경로에서 ```npm i``` 를 실행해주세요.<br/>
 
-## Available Scripts
+2️⃣ Front-end 개발 규칙<br/><br/>
+place/src 내부에는 아래의 5가지 폴더가 있습니다.<br/>
+충돌을 최소화하기 위해, 가급적이면 본인의 영역에서만 개발을 진행하도록 합니다.<br/>
+(각 폴더 내의 파일은 임의로 넣어놓은 것이니 자유롭게 수정해주시면 됩니다.)<br/>
+<img width="405" alt="image" src="https://github.com/PLACE-4th-UMC/PLACE-front/assets/91872300/0ee5fe5d-65b5-4771-9907-e9f364815254"><br/>
+```
+Home : 곽은채
+User : 이예성
+Story : 이승용
+Magazine : 정수현
+Exhibitions : 염지은
+```
+<br/>
+3️⃣ 커밋 메시지 컨벤션을 지켜주세요.<br/><br/>
+<img width="550" alt="image" src="https://github.com/PLACE-4th-UMC/PLACE-front/assets/91872300/57ab46a7-139c-4ff9-967e-10c1e4b3bf77"><br/>
+commit 할 때, 위 양식을 지켜주세요. (예시 -> Feat: add login button)<br/>
+혹시 모르실까봐 커밋&푸시 명령어 순서<br/>
+<br/>
+git status (변경상태 확인)<br/>
+git add . (전체 변경사항 add/ 혹은 특정 파일만 add도 가능해요)<br/>
+git commit -m "[커밋 메시지]"<br/>
+git push origin main<br/>
 
-In the project directory, you can run:
+<br/>
+4️⃣ 작업 시작 전에 pull하고 시작해주세요.<br/><br/>
+안그러면 푸시할 때 충돌을 마주칠수도 있답니다.<br/>
+git pull origin main ⭐️<br/>
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br/>
+5️⃣ Header와 Footer은 공용 컴포넌트를 사용합니다.<br/><br/>
+사용방법 : Header 파일과 Footer 파일 import 후 <Header/>, <Footer/> 형식으로 사용
+<br/>
+<br/>
+어려운 부분이 있거나 질문이 있다면 파트장에게~~
