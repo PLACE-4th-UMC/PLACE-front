@@ -3,7 +3,8 @@
 
 1️⃣ 프로젝트 환경설정<br/><br/>
 폴더를 하나 만드신 후, 폴더의 경로에서 터미널에 ```git clone [레포지토리 url]``` 를 실행하시면 됩니다.<br/>
-그리고 place 폴더 경로에서 ```npm i``` 를 실행해주세요.<br/>
+그리고 place 폴더 경로에서 ```npm i``` 를 실행해 설치해주세요. (이후 git pull 할때마다 해주시면 좋아요)<br/>
+```npm start```를 실행하여 오류 없이 실행되는지 확인해주세요.<br/><br/>
 
 2️⃣ Front-end 개발 규칙<br/><br/>
 place/src 내부에는 아래의 5가지 폴더가 있습니다.<br/>
@@ -17,7 +18,7 @@ Story : 이승용
 Magazine : 정수현
 Exhibitions : 염지은
 ```
-<br/>
+<br/><br/>
 3️⃣ 커밋 메시지 컨벤션을 지켜주세요.<br/><br/>
 <img width="550" alt="image" src="https://github.com/PLACE-4th-UMC/PLACE-front/assets/91872300/57ab46a7-139c-4ff9-967e-10c1e4b3bf77"><br/>
 commit 할 때, 위 양식을 지켜주세요. (예시 -> Feat: add login button)<br/>
