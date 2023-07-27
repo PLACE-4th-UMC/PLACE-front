@@ -13,8 +13,8 @@ place/src 내부에는 아래의 5가지 폴더가 있습니다.<br/>
 <img width="405" alt="image" src="https://github.com/PLACE-4th-UMC/PLACE-front/assets/91872300/0ee5fe5d-65b5-4771-9907-e9f364815254"><br/>
 ```
 Home : 곽은채
-User : 이예성
-Story : 이승용
+User : 이승용
+Story : 이예성
 Magazine : 정수현
 Exhibitions : 염지은
 ```
