@@ -1,10 +1,22 @@
-import React from 'react';
-import CSS from 'csstype';
+import React, { ReactNode } from 'react';
+import styled from 'styled-components';
 
-const FlexBox: CSS.Properties = {
-  display: 'flex',
-  gap: '18px',
-  alignItems:'center'
-};
+interface FlexBoxProps {
+  children: ReactNode;
+}
 
-export default FlexBox;
+function FlexBox1({ children }: FlexBoxProps) {
+  return (
+    <Flex>
+      {children}
+    </Flex>
+  );
+}
+
+const Flex = styled.div`
+  display: flex;
+  gap: 28px;
+  align-Items: center;
+`;
+
+export default FlexBox1;
