@@ -6,6 +6,7 @@ import Home from "./Home/Home";
 import Magazine from "./Magazine/Magazine";
 import Story from "./Story/Story";
 import Login from "./User/Login/Login";
+import SetProfile from "./User/Login/SetProfile";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/magazine" element={<Magazine />}></Route>
           <Route path="/story" element={<Story />}></Route>
           <Route path='/login' element={<Login/>}></Route>
+          <Route path='/setProfile' element={<SetProfile />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
