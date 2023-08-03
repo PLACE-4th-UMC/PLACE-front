@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import "./Font.css";
-import exhibitsData from "./exhibitdata";
+import axios from 'axios';
 import Modal from "./Modal";
 
 interface ExhibitItem {
@@ -14,21 +14,21 @@ interface ExhibitItem {
   artist: string;
   rating: string;
   story: {
-    name:string;
-    image:string;
-    profile:string;
-    heart:boolean | string;
-}
+    name: string;
+    image: string;
+    profile: string;
+    heart: boolean | string;
+  };
 }
 
 function Groups() {
-
   const itemsPerPage = 20;
   const [currentItemSet, setcurrentItemSet] = useState(itemsPerPage);
   const [sortType, setSortType] = useState("recent");
   const [selectedButton, setSelectedButton] = useState("recent");
   const [selectedExhibit, setSelectedExhibit] = useState<ExhibitItem | null>(null);
   const [modal, setModal] = useState(false);
+  const [exhibitsData, setExhibitsData] = useState<ExhibitItem[]>([]); // State to hold the fetched data
 
   const handleLoadMore = () => {
     setcurrentItemSet((currentItemSet) => currentItemSet + itemsPerPage);
@@ -57,6 +57,17 @@ function Groups() {
     document.body.classList.toggle("active-modal", modal);
   }, [modal]);
 
+  useEffect(() => {
+    axios
+      .get("/exhibits") 
+      .then((response: { data: SetStateAction<ExhibitItem[]>; }) => {
+        setExhibitsData(response.data);
+      })
+      .catch((error: any) => {
+        console.error("Error fetching data from the backend:", error);
+      });
+  }, []); 
+
   const sortingFunction = (a: ExhibitItem, b: ExhibitItem) => {
     if (sortType === "recent") {
       return b.id - a.id;
@@ -69,7 +80,10 @@ function Groups() {
   const sortedExhibits = [...exhibitsData].sort(sortingFunction);
   const visibleExhibits = sortedExhibits.slice(0, currentItemSet);
   const isMoreButtonVisible = exhibitsData.length > visibleExhibits.length;
-  const marginTopForMoreButton = isMoreButtonVisible ? `${Math.ceil(visibleExhibits.length / 4) * 203}px` : "0";
+  const marginTopForMoreButton = isMoreButtonVisible
+    ? `${Math.ceil(visibleExhibits.length / 4) * 203}px`
+    : "0";
+
 
   return (
     <div style={{ width: "100%", maxWidth: "1366px", margin: "0 auto", flexDirection: "row", height: "full", display: "flex"}}>
