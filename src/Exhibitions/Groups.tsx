@@ -81,12 +81,12 @@ function Groups() {
           </div>
         </div>
         <div>
-          <div style={{ marginLeft: "898px", marginTop: "157px", width: "376.9px", height: "17.2px" }}>
+          <div style={{ marginLeft: "898px", marginTop: "157px", width: "385px", height: "17.2px" }}>
             <button  onClick={() => handleButtonClick("recent")} style={{ width: "75.14px", height: "17.036px", transform: "rotate(-0.139deg)", flexShrink: "0", border: "none", backgroundColor: "white", color: "#484848", textAlign: "center", fontFamily: "Montserrat", fontSize: "20px", fontStyle: "normal", fontWeight: selectedButton === "recent" ? "600" : "500", lineHeight: "normal", cursor: "pointer" }}>Recent</button>
             <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6" fill="none" style={{ marginLeft: "16.82px", marginBottom :"2px" }}>
               <circle cx="3" cy="3.00024" r="3" fill="#E62A2A" />
             </svg>
-            <button onClick={() => handleButtonClick("mostviewed")} style={{ marginLeft: "16.82px", width: "137.8px", height: "17.036px", transform: "rotate(-0.139deg)", flexShrink: "0", border: "none", backgroundColor: "white", color: "#484848", textAlign: "center", fontFamily: "Montserrat", fontSize: "20px", fontStyle: "normal", fontWeight: selectedButton === "mostviewed" ? "600" : "500", lineHeight: "normal", cursor: "pointer" }}>Most viewed</button>
+            <button onClick={() => handleButtonClick("mostviewed")} style={{ marginLeft: "16.82px", width: "145px", height: "17.036px", transform: "rotate(-0.139deg)", flexShrink: "0", border: "none", backgroundColor: "white", color: "#484848", textAlign: "center", fontFamily: "Montserrat", fontSize: "20px", fontStyle: "normal", fontWeight: selectedButton === "mostviewed" ? "600" : "500", lineHeight: "normal", cursor: "pointer" }}>Most viewed</button>
             <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6" fill="none" style={{ marginLeft: "16.82px", marginBottom:"2px" }}>
               <circle cx="3" cy="3.00024" r="3" fill="#E62A2A" />
             </svg>
