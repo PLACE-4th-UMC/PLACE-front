@@ -1,26 +1,24 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-const SetProfileContainer = styled.div`
-  flex-shrink: 0;
+const EditProfileContainer = styled.div`
 `;
 
-const SetProfileTitle = styled.p`
-  margin-left: 9.19rem;
-  margin-top: 6.5rem;
-  margin-bottom: 4.5rem;
-  height: 2.75rem;
-  color: #484848;
-  font-family: Montserrat;
-  font-size: 2.25rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 3rem;
+const TopContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
-const SetProfileImage = styled.img`
-  margin-left: 36.37rem;
-  margin-top: 3rem;
+const BackBtn = styled.img`
+  margin-left: 6.94rem;
+  margin-right: 28.13rem;
+  width: 1.3125rem;
+  height: 2.6875rem;
+`;
+
+const EditProfileImage = styled.img`
+  margin-top: 6.37rem;
   width: 12.6875rem;
   height: 12.6875rem;
 `;
@@ -55,7 +53,7 @@ const InfoInput = styled.input`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  
+
   &::placeholder{
     color: #C0C0C0;
   }
@@ -64,7 +62,7 @@ const InfoInput = styled.input`
 const SaveButton = styled.button`
   margin-left: 37.75rem;
   margin-top: 5.56rem;
-  margin-bottom: 21.5rem;
+  margin-bottom: 20.19rem;
   width: 9.875rem;
   height: 3.375rem;
   border-radius: 0.375rem;
@@ -82,17 +80,25 @@ const SaveButton = styled.button`
 
 
 
-function SetProfile() {
+function EditProfile() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [birth, setBirth] = useState('');
   const [country, setCountry] = useState('');
   console.log(name, email, birth, country);
   
+  const navigate = useNavigate();
+  
+  const handleBackBtn = () => {
+    navigate('../')   // 이전 페이지로 이동
+  }
+  
   return (
-    <SetProfileContainer>
-      <SetProfileTitle>Set Profile</SetProfileTitle>
-      <SetProfileImage src='/Images/User/Login/profile.png' alt='프로필'/>
+    <EditProfileContainer>
+      <TopContainer>
+        <BackBtn src='/Images/User/Account/backBtn.png' alt='뒤로 가기' onClick={handleBackBtn}/>
+        <EditProfileImage src='/Images/User/Account/profile.png' alt='프로필'/>
+      </TopContainer>
       <InfoTitle>Name</InfoTitle>
       <InfoInput 
         placeholder='junyeeee' 
@@ -118,8 +124,8 @@ function SetProfile() {
         onChange={(e) => setCountry(e.target.value)}
       />
       <SaveButton>Save</SaveButton>
-    </SetProfileContainer>
+    </EditProfileContainer>
   )
 }
 
-export default SetProfile
+export default EditProfile

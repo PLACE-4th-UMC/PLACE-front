@@ -7,6 +7,8 @@ import Magazine from "./Magazine/Magazine";
 import Story from "./Story/Story";
 import Login from "./User/Login/Login";
 import SetProfile from "./User/Login/SetProfile";
+import Account from "./User/Account/Account";
+import EditProfile from "./User/Account/EditProfile";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/story" element={<Story />}></Route>
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/setProfile' element={<SetProfile />}></Route>
+          <Route path='/account' element={<Account />}></Route>
+          <Route path='/editProfile' element={<EditProfile />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
