@@ -1,5 +1,4 @@
 import { SetStateAction, useEffect, useState } from "react";
-import "./Font.css";
 import axios from 'axios';
 import Modal from "./Modal";
 
