@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const StoryContentWrapper = styled.div`
+  height: 21.25rem;
+  width: 13.5rem;
   position: relative;
 `;
 
 const StoryContentBackground = styled.img`
-  height: 21.25rem;
-  width: 13.5rem;
+  height: 100%;
+  width: 100%;
   border-radius: 5%;
 `;
 

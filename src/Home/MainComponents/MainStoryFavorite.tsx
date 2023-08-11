@@ -47,7 +47,7 @@ const StoryContent = styled.div`
   height: 21.25rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 2%;
+  column-gap: 1.88rem;
 `;
 
 function MainStoryFavorite({ text }: any) {
