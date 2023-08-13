@@ -1,0 +1,27 @@
+.footer {
+  font-family: Montserrat;
+  background: #eff0f2;
+  height: 400px;
+}
+
+.place {
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 61px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: linear-gradient(0deg, #484848, #484848);
+}
+
+.place span {
+  color: #e52a2a;
+}
+
+.sns-btn {
+  width: 172px;
+  height: 52px;
+  top: 168px;
+  left: 80px;
+  border-radius: 6px;
+  background-color: #e0e2e6;
+}
