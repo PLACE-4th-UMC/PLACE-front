@@ -1,39 +1,32 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const LoginButtonContainer = styled.div`
-  
-`;
 
-const LoginButtonImg = styled.img`
+const LoginButtons = styled.p`
   width: 22.8125rem;
   height: 3.3125rem;
+  border-radius: 0.625rem;
+  background-color: ${({id}) =>
+  (id === '카카오' ? '#FEE500' : id === '네이버' ? '#03C75A' : '#EFF0F2')};
+  
   flex-shrink: 0;
-`;
-
-const LoginButtonText= styled.p`
   display: flex;
-  width: 14.481rem;
-  height: 1.3125rem;
   flex-direction: column;
   justify-content: center;
-  flex-shrink: 0;
   font-family: Montserrat;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 600;
   line-height: 3rem;
+  
+  margin-left: 31.31rem;
 `;
 
-function LoginButton({img, alt, text}: any) {
+function LoginButton({text, id}: any) {
   return (
-    <LoginButtonContainer>
-      <LoginButtonImg
-        src={img} 
-        alt={alt}
-      />
-      <LoginButtonText>{text}</LoginButtonText>
-    </LoginButtonContainer>
+    <LoginButtons id={id}>
+      {text}
+    </LoginButtons>
   )
 }
 
