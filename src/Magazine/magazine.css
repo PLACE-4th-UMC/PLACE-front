@@ -1,0 +1,27 @@
+.magazine-title-box {
+  width: 100%;
+  height: 610px;
+  top: 101px;
+  background: linear-gradient(101.28deg, #121212 0%, #b9b9b9 91.67%);
+}
+
+.sub-title {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #484848;
+  margin-left: 76px;
+  margin-top: 103px;
+  margin-bottom: 10px;
+}
+
+.red-bar {
+  width: 143px;
+  height: 6px;
+  top: 165px;
+  left: 22px;
+  border-radius: 3px;
+  background: #e52a2a;
+  margin-left: 76px;
+}
