@@ -25,3 +25,32 @@
   background: #e52a2a;
   margin-left: 76px;
 }
+
+.item-box {
+  width: 382px;
+  height: 340px;
+  top: 8px;
+  border-radius: 12px;
+  background-color: #484848;
+}
+
+.item-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #484848;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.item-address {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #9a9a9a;
+  margin-bottom: 43px;
+}
