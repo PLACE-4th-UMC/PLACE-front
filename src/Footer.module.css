@@ -4,6 +4,10 @@
   height: 400px;
 }
 
+.bottom {
+  display: flex;
+}
+
 .place {
   font-size: 50px;
   font-weight: 800;
@@ -11,6 +15,8 @@
   letter-spacing: 0em;
   text-align: left;
   color: linear-gradient(0deg, #484848, #484848);
+  margin-top: 72px;
+  margin-left: 80px;
 }
 
 .place span {
@@ -24,4 +30,32 @@
   left: 80px;
   border-radius: 6px;
   background-color: #e0e2e6;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  line-height: 52px;
+  margin-right: 32px;
+  color: #484848;
+}
+
+.menu {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #484848;
+  margin-bottom: 20px;
+}
+
+.menu-list {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #484848;
+  margin-bottom: 5px;
 }
