@@ -22,6 +22,9 @@ function App() {
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/setProfile' element={<SetProfile />}></Route>
           <Route path='/exhibitions' element={<Exhibitions />}></Route>
+          <Route path='/setProfile' element={<SetProfile />}></Route>
+          <Route path='/editProfile' element={<EditProfile />}></Route>
+          <Route path='/account' element={<Account />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

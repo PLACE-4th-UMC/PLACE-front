@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
+import CountryComponent from '../CountryComponent';
 
 const SetProfileContainer = styled.div`
   flex-shrink: 0;
@@ -55,10 +56,6 @@ const InfoInput = styled.input`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  
-  &::placeholder{
-    color: #C0C0C0;
-  }
 `;
 
 const SaveButton = styled.button`
@@ -95,28 +92,21 @@ function SetProfile() {
       <SetProfileImage src='/Images/User/Login/profile.png' alt='프로필'/>
       <InfoTitle>Name</InfoTitle>
       <InfoInput 
-        placeholder='junyeeee' 
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
       <InfoTitle>Email</InfoTitle>
       <InfoInput 
-        placeholder='a01049253427@gmail.com'
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
       <InfoTitle>Date of Birth</InfoTitle>
       <InfoInput 
-        placeholder='02/07/2001'
         value={birth}
         onChange={(e) => setBirth(e.target.value)}
       />
       <InfoTitle>Country</InfoTitle>
-      <InfoInput 
-        placeholder='South Korea'
-        value={country}
-        onChange={(e) => setCountry(e.target.value)}
-      />
+      <CountryComponent/>
       <SaveButton>Save</SaveButton>
     </SetProfileContainer>
   )
