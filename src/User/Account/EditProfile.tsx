@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import CountryComponent from '../CountryComponent';
+import Header from '../../Header';
+import Footer from '../../Footer';
 
 const EditProfileContainer = styled.div`
 `;
@@ -91,30 +93,34 @@ function EditProfile() {
   }
   
   return (
-    <EditProfileContainer>
-      <TopContainer>
-        <BackBtn src='/Images/User/Account/backBtn.png' alt='뒤로 가기' onClick={handleBackBtn}/>
-        <EditProfileImage src='/Images/User/Account/profile.png' alt='프로필'/>
-      </TopContainer>
-      <InfoTitle>Name</InfoTitle>
-      <InfoInput 
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <InfoTitle>Email</InfoTitle>
-      <InfoInput 
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <InfoTitle>Date of Birth</InfoTitle>
-      <InfoInput 
-        value={birth}
-        onChange={(e) => setBirth(e.target.value)}
-      />
-      <InfoTitle>Country</InfoTitle>
-      <CountryComponent/>
-      <SaveButton>Save</SaveButton>
-    </EditProfileContainer>
+    <div>
+      <Header/>
+      <EditProfileContainer>
+        <TopContainer>
+          <BackBtn src='/Images/User/Account/backBtn.png' alt='뒤로 가기' onClick={handleBackBtn}/>
+          <EditProfileImage src='/Images/User/Account/profile.png' alt='프로필'/>
+        </TopContainer>
+        <InfoTitle>Name</InfoTitle>
+        <InfoInput 
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <InfoTitle>Email</InfoTitle>
+        <InfoInput 
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <InfoTitle>Date of Birth</InfoTitle>
+        <InfoInput 
+          value={birth}
+          onChange={(e) => setBirth(e.target.value)}
+        />
+        <InfoTitle>Country</InfoTitle>
+        <CountryComponent/>
+        <SaveButton>Save</SaveButton>
+      </EditProfileContainer>
+      <Footer/>
+    </div>
   )
 }
 

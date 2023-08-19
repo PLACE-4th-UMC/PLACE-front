@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import CountryComponent from '../CountryComponent';
+import Header from '../../Header';
+import Footer from '../../Footer';
 
 const SetProfileContainer = styled.div`
   flex-shrink: 0;
@@ -87,28 +89,32 @@ function SetProfile() {
   console.log(name, email, birth, country);
   
   return (
-    <SetProfileContainer>
-      <SetProfileTitle>Set Profile</SetProfileTitle>
-      <SetProfileImage src='/Images/User/Login/profile.png' alt='프로필'/>
-      <InfoTitle>Name</InfoTitle>
-      <InfoInput 
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <InfoTitle>Email</InfoTitle>
-      <InfoInput 
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <InfoTitle>Date of Birth</InfoTitle>
-      <InfoInput 
-        value={birth}
-        onChange={(e) => setBirth(e.target.value)}
-      />
-      <InfoTitle>Country</InfoTitle>
-      <CountryComponent/>
-      <SaveButton>Save</SaveButton>
-    </SetProfileContainer>
+    <div>
+      <Header/>
+      <SetProfileContainer>
+        <SetProfileTitle>Set Profile</SetProfileTitle>
+        <SetProfileImage src='/Images/User/Login/profile.png' alt='프로필'/>
+        <InfoTitle>Name</InfoTitle>
+        <InfoInput 
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <InfoTitle>Email</InfoTitle>
+        <InfoInput 
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <InfoTitle>Date of Birth</InfoTitle>
+        <InfoInput 
+          value={birth}
+          onChange={(e) => setBirth(e.target.value)}
+        />
+        <InfoTitle>Country</InfoTitle>
+        <CountryComponent/>
+        <SaveButton>Save</SaveButton>
+      </SetProfileContainer>
+      <Footer/>
+    </div>
   )
 }
 

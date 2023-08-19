@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import Header from '../../Header';
+import Footer from '../../Footer';
 
 const AccountContainer = styled.div`
   flext-shrink: 0;
@@ -137,21 +139,25 @@ const StoryNumber = styled.p`
 
 function Account() {
   return (
-    <AccountContainer>
-      <SideBox>
-        <AccountProfileImage src='/Images/User/Account/accountProfile.png' alt='프로필'/>
-        <SideBoxName>junyeeee</SideBoxName>
-        <SideBoxCountry>South Korea</SideBoxCountry>
-        <SideBoxDate>Joined in 2021</SideBoxDate>
-        <EditProfileBtn>Edit Profile</EditProfileBtn>
-      </SideBox>
-      <MainContents>
-        <AccountTitle>Hello, junyeeee<span>.</span></AccountTitle>
-        <LogoutBtn>Log out</LogoutBtn>
-        <LayoutLine/>
-        <StoryNumber>7 Stories</StoryNumber>
-      </MainContents>
-    </AccountContainer>
+    <div>
+      <Header/>
+      <AccountContainer>
+        <SideBox>
+          <AccountProfileImage src='/Images/User/Account/accountProfile.png' alt='프로필'/>
+          <SideBoxName>junyeeee</SideBoxName>
+          <SideBoxCountry>South Korea</SideBoxCountry>
+          <SideBoxDate>Joined in 2021</SideBoxDate>
+          <EditProfileBtn>Edit Profile</EditProfileBtn>
+        </SideBox>
+        <MainContents>
+          <AccountTitle>Hello, junyeeee<span>.</span></AccountTitle>
+          <LogoutBtn>Log out</LogoutBtn>
+          <LayoutLine/>
+          <StoryNumber>7 Stories</StoryNumber>
+        </MainContents>
+      </AccountContainer>
+      <Footer/>
+    </div>
   )
 }
 

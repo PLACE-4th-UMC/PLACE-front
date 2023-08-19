@@ -1,6 +1,14 @@
 import React from "react";
 import styled from 'styled-components';
 import LoginButton from "./LoginButton";
+import Header from "../../Header";
+import Footer from "../../Footer";
+
+const LoginContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const LoginTitle = styled.p`
   width: 37.8125rem;
@@ -13,17 +21,11 @@ const LoginTitle = styled.p`
   font-weight: 700;
   line-height: 3rem;
   
-  margin-left: 23.81rem;
   margin-top: 8.56rem;
 `;
 
-const LoginContainer = styled.div`
-  
-`;
-
 const LoginButtonContainer = styled.div`
-  margin-top: 5.31rem;
-  margin-bottom: 19.25rem;
+  margin: 5.31rem 0 18rem 0;
 `;
 
 function Login() {
@@ -34,17 +36,21 @@ function Login() {
   ]
   
   return(
-    <LoginContainer>
-      <LoginTitle>Log in</LoginTitle>
-      <LoginButtonContainer>
-        {ButtonData.map((button) => (
-          <LoginButton
-            id = {button.id}
-            text = {button.text}
-          />
-        ))}
-      </LoginButtonContainer>
-    </LoginContainer>
+    <div>
+      <Header/>
+      <LoginContainer>
+        <LoginTitle>Log in</LoginTitle>
+        <LoginButtonContainer>
+          {ButtonData.map((button) => (
+            <LoginButton
+              id = {button.id}
+              text = {button.text}
+            />
+          ))}
+        </LoginButtonContainer>
+      </LoginContainer>
+      <Footer/>
+    </div>
   );
 }
 
