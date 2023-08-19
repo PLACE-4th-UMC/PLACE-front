@@ -9,9 +9,7 @@ const SetProfileContainer = styled.div`
 `;
 
 const SetProfileTitle = styled.p`
-  margin-left: 9.19rem;
-  margin-top: 6.5rem;
-  margin-bottom: 4.5rem;
+  margin: 6.5rem 0 4.5rem 9.19rem;
   height: 2.75rem;
   color: #484848;
   font-family: Montserrat;
@@ -22,16 +20,13 @@ const SetProfileTitle = styled.p`
 `;
 
 const SetProfileImage = styled.img`
-  margin-left: 36.37rem;
-  margin-top: 3rem;
+  margin: 3rem 50% 0 50%;
   width: 12.6875rem;
   height: 12.6875rem;
 `;
 
 const InfoTitle = styled.p`
-  margin-left: 9.19rem;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin: 1.25rem 0 1.25rem 9.19rem;
   height: 1.0625rem;
   color: #484848;
   font-family: Montserrat;
@@ -42,8 +37,8 @@ const InfoTitle = styled.p`
 `;
 
 const InfoInput = styled.input`
-  margin-left: 9.19rem;
-  width: 64.875rem;
+  margin: 0 11.31rem 0 9.19rem;
+  width: calc(100% - 18.38rem);
   height: 3.5625rem;
   border-radius: 0.625rem;
   border: 1px solid #E0E2E6;
@@ -61,9 +56,7 @@ const InfoInput = styled.input`
 `;
 
 const SaveButton = styled.button`
-  margin-left: 37.75rem;
-  margin-top: 5.56rem;
-  margin-bottom: 21.5rem;
+  margin: 5.56rem 50% 21.5rem 50%;
   width: 9.875rem;
   height: 3.375rem;
   border-radius: 0.375rem;

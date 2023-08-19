@@ -7,7 +7,7 @@ const CustomSelectWrapper = styled.div`
   border: 1px solid #ccc;
   cursor: pointer;
   margin-left: 9.19rem;
-  width: 64.875rem;
+  width: calc(100% - 18.38rem);
   border-radius: 0.625rem;
   border: 1px solid #E0E2E6;
   background: #FFF;
