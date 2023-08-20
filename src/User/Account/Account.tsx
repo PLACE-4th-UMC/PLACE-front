@@ -4,32 +4,31 @@ import Header from '../../Header';
 import Footer from '../../Footer';
 
 const AccountContainer = styled.div`
-  flext-shrink: 0;
   display: flex;
-  align-items: flex-start;
 `;
 
 // 사이드 박스
 
 const SideBox = styled.div`
-  margin-top: 5.5rem;
-  margin-left: 4.75rem;
+  margin: 5.5rem 4.37rem 0 4.75rem;
   width: 17.4375rem;
   height: 27.9375rem;
   border-radius: 0.5rem;
   background: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const AccountProfileImage = styled.img`
-  margin-left: 4rem;
-  margin-top: 2rem;
+  margin: 2rem 4rem 0 4rem;
   width: 9.4375rem;
   height: 9.4375rem;
 `;
 
 const SideBoxName = styled.p`
-  margin-left: 3.19rem;
-  margin-top: 2.5rem;
+  margin: 2.5rem auto 0 3.19rem;
   height: 2.75rem;
   color: #484848;
   font-family: Montserrat;
@@ -40,8 +39,7 @@ const SideBoxName = styled.p`
 `;
 
 const SideBoxCountry = styled.p`
-  margin-left: 3.13rem;
-  margin-top: 1.25rem;
+  margin: 1.25rem auto 0 3.12rem;
   height: 1.25rem;
   color: #484848;
   font-family: Montserrat;
@@ -52,9 +50,7 @@ const SideBoxCountry = styled.p`
 `;
 
 const SideBoxDate = styled.p`
-  margin-left: 3.13rem;
-  margin-top: 0rem;
-  margin-bottom: 0rem;
+  margin: 0 auto 0 3.12rem;
   height: 1.25rem;
   color: #9A9A9A;
   font-family: Montserrat;
@@ -65,8 +61,7 @@ const SideBoxDate = styled.p`
 `;
 
 const EditProfileBtn = styled.button`
-  margin-left: 4.56rem;
-  margin-top: 2.38rem;
+  margin: 2.37rem 0 2.31rem 0;
   width: 8.3125rem;
   height: 2.8125rem;
   border-radius: 0.375rem;
@@ -85,7 +80,7 @@ const EditProfileBtn = styled.button`
 // 메인 컨텐츠
 
 const MainContents = styled.div`
-  margin-left: 4.37rem;
+  margin: 0 4.05rem 0 0;
 `;
 
 const AccountTitle = styled.p`
@@ -104,7 +99,7 @@ const AccountTitle = styled.p`
 `;
 
 const LogoutBtn = styled.button`
-  margin-left: 35.25rem;
+  margin: 0 15rem 0 auto;
   display: flex;
   height: 1.25rem;
   color: #484848;
@@ -120,7 +115,7 @@ const LogoutBtn = styled.button`
 
 const LayoutLine = styled.div`
   margin-top: 1.25rem;
-  width: 39.9375rem;
+  width: calc(100% - 15rem);
   height: 0.125rem;
   flex-shrink: 0;
   border-radius: 0.3125rem;
@@ -135,6 +130,23 @@ const StoryNumber = styled.p`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+`;
+
+const StoryContainer = styled.div`
+`;
+
+const StoryImage = styled.img`
+  width: 12.36244rem;
+  height: 15.06531rem;
+  margin: 0 1.33rem 0 0;
+`;
+
+const StoryTitle = styled.p`
+  
+`;
+
+const StoryText = styled.p`
+  
 `;
 
 function Account() {
@@ -154,6 +166,15 @@ function Account() {
           <LogoutBtn>Log out</LogoutBtn>
           <LayoutLine/>
           <StoryNumber>7 Stories</StoryNumber>
+          <StoryContainer>
+            <StoryImage/>
+            <StoryImage/>
+            <StoryImage/>
+            <StoryImage/>
+            <StoryImage/>
+            <StoryImage/>
+            <StoryImage/>
+          </StoryContainer>
         </MainContents>
       </AccountContainer>
       <Footer/>
