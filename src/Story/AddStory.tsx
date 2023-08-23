@@ -1,7 +1,5 @@
 import React, { useState, useRef }  from 'react';
 import styled from 'styled-components';
-// import { ImagePreview } from './StoryImage';
-// import { Search } from './Search';
 import ImageICON from './images/Image.svg';
 import SearchICON from './images/Search.svg';
 
