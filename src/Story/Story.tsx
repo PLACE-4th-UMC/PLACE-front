@@ -6,6 +6,7 @@ import TextStyleBold from './ui/TextStyleBold';
 import TextStyleLight from './ui/TextStyleLight';
 import Modal from './Modal';
 import AddStory from './AddStory';
+import PlusICON from './images/Plus.svg'
 
 function Story() {
   const [isOpenModal, setOpenModal] = useState<boolean>(false);
@@ -31,20 +32,20 @@ function Story() {
     <>
       <Header />
       <div style={{ display: 'flex' }}>
-        <div>
-          <FlexBox style={{ margin: '8.75rem 4rem 0 6rem' }}> {/*스토리 추가 모달창 오픈*/}
+        <div style={{width:'100%'}}>
+          <FlexBox style={{ margin: '6rem 0 0 6rem' }}> {/*스토리 추가 모달창 오픈*/}
             {isOpenModal && (
               <Modal onClickToggleModal={onClickToggleModal}>
                 <AddStory />
               </Modal>
             )}
-            <Button onClick={onClickToggleModal}></Button>
+            <Button onClick={onClickToggleModal} ><img style={{width:'20px'}} src={PlusICON}/></Button>
             <div>
               <TextStyleBold FontSize={28}>Add Your Story</TextStyleBold>
               <TextStyleLight>Share your moments, experiences...</TextStyleLight>
             </div>
           </FlexBox>
-          <div style={{ margin: '6rem 0 16rem 6.5rem' }}> {/*유저들 스토리 조회*/}
+          <div style={{ margin: '4rem 0 12rem 6.5rem' }}> {/*유저들 스토리 조회*/}
             <SemiTitle>Other Stories</SemiTitle>
             <FlexBox>
               <ProfIMG src={ImageSRC && './images/pre.jpg'} />
@@ -79,7 +80,7 @@ function Story() {
             </FlexBox>
           </div>
         </div>
-        <div style={{ margin: '10rem 6rem 0 0' }}> {/*최근 스토리 보기*/}
+        <div style={{ margin: '8rem 8rem 0 0' }}> {/*최근 스토리 보기*/}
           <SemiTitle>Latest Story</SemiTitle>
           <StoryPreview>
             <div style={{ position: 'relative', top: '24rem', left: '3rem' }}>
@@ -98,14 +99,15 @@ function Story() {
   );
 }
 
-const Button = styled.button`
+const Button = styled.div`
   width: 70px;
   height: 70px;
   background-color: #484848;
   border-radius: 35px;
   border: none;
   cursor: pointer;
-
+  display: flex;
+  justify-content: center;
   &:hover {
   }
 `;
@@ -118,13 +120,15 @@ width: 24rem;
 `;
 
 const StoryPreview = styled.div`
-  width: 46rem;
+  width: 42rem;
   height: 30rem;
-  background: antiquewhite;
   border-radius: 0.75rem;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-content: center;
+  border-radius: 0.75rem;
+  background: url(<path-to-image>), lightgray 50%;
+  cover: no-repeat, #e8eaec;
 `;
 
 const SemiTitle = styled.p`
