@@ -3,4 +3,8 @@ body {
   padding: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+a {
+  text-decoration: none;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
