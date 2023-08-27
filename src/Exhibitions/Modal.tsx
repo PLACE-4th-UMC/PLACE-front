@@ -2,19 +2,20 @@ import React, { useEffect, useState } from "react";
 
 interface ModalProps {
   exhibitItem: {
-    id: number;
-    image: string;
-    title: string;
+    exhibitionIdx: number;
+    exhibitionImg: string;
+    exhibitionName: string;
     location: string;
-    period: string;
-    time: string;
-    price: string;
+    startDate: string;
+    endDate: string;
+    operatingTime: string;
+    fee: string;
     artist: string;
     rating: string;
     story: {
-      name: string;
-      image: string;
-      profile: string;
+      nickname: string;
+      storyImg: string;
+      userImg: string;
       heart: boolean | string;
     };
   };
@@ -62,8 +63,8 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
       >
         <div className="modal-content" style={{ position: "relative", width: "100%", height: "100%" }}>
           <img
-            src={exhibitItem.image}
-            alt={exhibitItem.title}
+            src={exhibitItem.exhibitionImg}
+            alt={exhibitItem.exhibitionName}
             style={{
               left: "94px",
               top: "105px",
@@ -94,7 +95,7 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
                 lineHeight: "normal",
               }}
             >
-              {exhibitItem.title}
+              {exhibitItem.exhibitionName}
               <div className="period" style={{ width: "369.999px", height: "26px", flexShrink: "0", gap: "48.25px" }}>
                 <div style={{ marginTop: "45px", gap: "48.25px", display: "flex", flex: "absolute" }}>
                   <div
@@ -126,7 +127,7 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
                       flex: "relative",
                     }}
                   >
-                    {exhibitItem.period}
+                    {exhibitItem.startDate} ~ {exhibitItem.endDate}
                   </div>
                 </div>
                 <div style={{ marginTop: "9px", gap: "48.25px", display: "flex", flex: "absolute" }}>
@@ -159,7 +160,7 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
                       flex: "relative",
                     }}
                   >
-                    {exhibitItem.time}
+                    {exhibitItem.operatingTime}
                   </div>
                 </div>
                 <div style={{ marginTop: "9px", gap: "48.25px", display: "flex", flex: "absolute" }}>
@@ -225,7 +226,7 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
                       flex: "relative",
                     }}
                   >
-                    {exhibitItem.price}
+                    {exhibitItem.fee}
                   </div>
                 </div>
                 <div style={{ marginTop: "9px", gap: "48.25px", display: "flex", flex: "absolute" }}>
@@ -343,14 +344,14 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
                     }}
                   >
                     <img
-                      src={exhibitItem.story.image}
+                      src={exhibitItem.story.storyImg}
                       alt="Story Image"
                       width="147.83"
                       height="180.151"
                       style={{ width: "147.83px", height: "180.151px", flexShrink: 0, borderRadius: "8px" }}
                     />
                     <img
-                      src={exhibitItem.story.image}
+                      src={exhibitItem.story.storyImg}
                       alt="Story Image"
                       width="147.83"
                       height="180.151"
