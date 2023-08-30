@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import CountryComponent from '../CountryComponent';
 import Header from '../../Header';
 import Footer from '../../Footer';
+import axios from 'axios';
+import { sign } from 'crypto';
 
 const SetProfileContainer = styled.div`
   flex-shrink: 0;
@@ -72,14 +74,20 @@ const SaveButton = styled.button`
   line-height: normal;
 `;
 
-
-
 function SetProfile() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [birth, setBirth] = useState('');
   const [country, setCountry] = useState('');
   console.log(name, email, birth, country);
+  
+  const signUpUrl = 'http://exhibition-place.site:8080/signup';
+  
+  useEffect(() => {
+    fetch(signUpUrl)
+      .then((response) => response.json())
+      .then((data) => setEmail(data))
+  }, []);
   
   return (
     <div>
