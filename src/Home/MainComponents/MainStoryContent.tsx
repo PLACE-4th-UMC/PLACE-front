@@ -55,21 +55,37 @@ const StoryContentAccountLocation = styled.p`
   margin-top: 5px;
 `;
 
-function MainStoryContent({ background, img, user, location }: any) {
+function MainStoryContent({
+  login,
+  islike,
+  onclick,
+  background,
+  img,
+  user,
+  location,
+}: any) {
   const [like, setLike] = useState(false);
 
   const toggleLike = () => {
     setLike(!like);
   };
 
+  const [active, setActive] = useState(false);
+
   return (
     <StoryContentWrapper>
       <StoryContentBackground src={background} />
       <StoryContentHeart>
-        <StoryContentHeartImg
-          src={like ? "/Images/Home/heart_full.png" : "/Images/Home/heart.png"}
-          onClick={toggleLike}
-        />
+        {login ? (
+          <StoryContentHeartImg
+            src={
+              islike ? "/Images/Home/heart_full.png" : "/Images/Home/heart.png"
+            }
+            onClick={onclick}
+          />
+        ) : (
+          <StoryContentHeartImg src="/Images/Home/heart.png" />
+        )}
       </StoryContentHeart>
       <StoryContentAccount>
         <StoryContentAccountImg src={img} />
