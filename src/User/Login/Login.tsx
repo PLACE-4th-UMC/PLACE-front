@@ -1,8 +1,10 @@
 import React from "react";
 import styled from 'styled-components';
-import LoginButton from "./LoginButton";
 import Header from "../../Header";
 import Footer from "../../Footer";
+import NaverLogin from "./NaverLogin";
+import KakaoLogin from "./KakaoLogin";
+import GoogleLogin from "./GoogleLogin";
 
 const LoginContainer = styled.div`
   display: flex;
@@ -29,11 +31,6 @@ const LoginButtonContainer = styled.div`
 `;
 
 function Login() {
-  const ButtonData = [
-    {id: '카카오', text: '카카오 로그인'},
-    {id: '네이버', text: '네이버 로그인'},
-    {id: '구글', text: '구글 로그인'}
-  ]
   
   return(
     <div>
@@ -41,12 +38,9 @@ function Login() {
       <LoginContainer>
         <LoginTitle>Log in</LoginTitle>
         <LoginButtonContainer>
-          {ButtonData.map((button) => (
-            <LoginButton
-              id = {button.id}
-              text = {button.text}
-            />
-          ))}
+          <KakaoLogin/>
+          <NaverLogin/>
+          <GoogleLogin/>
         </LoginButtonContainer>
       </LoginContainer>
       <Footer/>
