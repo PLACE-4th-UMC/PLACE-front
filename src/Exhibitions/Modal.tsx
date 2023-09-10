@@ -1,30 +1,15 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 interface ModalProps {
-  exhibitItem: {
-    exhibitionIdx: number;
-    exhibitionImg: string;
-    exhibitionName: string;
-    location: string;
-    startDate: string;
-    endDate: string;
-    operatingTime: string;
-    fee: string;
-    artist: string;
-    rating: string;
-    story: {
-      nickname: string;
-      storyImg: string;
-      userImg: string;
-      heart: boolean | string;
-    };
-  };
-
   closeModal: () => void;
+  exhibitionIdx: number; // exhibitionIdx 추가
   style?: React.CSSProperties;
 }
 
-const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
+const Modal: React.FC<ModalProps> = ({ closeModal, exhibitionIdx }) => {
+  const [exhibitItem, setExhibitItem] = useState<any>(null); // Initialize with null
+
   const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (event.target === event.currentTarget) {
       closeModal();
@@ -38,8 +23,35 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
   };
 
   useEffect(() => {
-    setHeartClicked(exhibitItem.story.heart === true);
-  }, [exhibitItem.story.heart]);
+    let currentUrl = `http://exhibition-place.site:8080/exhibitions/:${exhibitionIdx}`; 
+  
+    try {
+      axios.get(currentUrl, {
+        headers: {
+          Authorization: "accessToken",
+        },
+      })
+        .then((response) => response.data)  
+        .then((data) => {
+          if (data.isSuccess) {
+            console.log(data.result);
+            setExhibitItem(data.result);
+          } else {
+            console.error("Request was successful, but the data contained an error:", data.message);
+          }
+        })
+        .catch((error) => {
+          // 오류 처리
+          console.error("Error fetching exhibitions:", error);
+        });
+  } catch (error) {
+    console.error("An error occurred during the fetch:", error);
+  }
+}, [exhibitionIdx]);
+
+  if (!exhibitItem) {
+    return null;
+  }
 
   return (
     <div
@@ -95,7 +107,7 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
                 lineHeight: "normal",
               }}
             >
-              {exhibitItem.exhibitionName}
+              {exhibitItem.result.exhibitionName}
               <div className="period" style={{ width: "369.999px", height: "26px", flexShrink: "0", gap: "48.25px" }}>
                 <div style={{ marginTop: "45px", gap: "48.25px", display: "flex", flex: "absolute" }}>
                   <div
@@ -127,7 +139,7 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
                       flex: "relative",
                     }}
                   >
-                    {exhibitItem.startDate} ~ {exhibitItem.endDate}
+                    {exhibitItem.result.startDate} ~ {exhibitItem.result.endDate}
                   </div>
                 </div>
                 <div style={{ marginTop: "9px", gap: "48.25px", display: "flex", flex: "absolute" }}>
@@ -160,7 +172,7 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
                       flex: "relative",
                     }}
                   >
-                    {exhibitItem.operatingTime}
+                    {exhibitItem.result.operatingTime}
                   </div>
                 </div>
                 <div style={{ marginTop: "9px", gap: "48.25px", display: "flex", flex: "absolute" }}>
@@ -193,7 +205,7 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
                       flex: "relative",
                     }}
                   >
-                    {exhibitItem.location}
+                    {exhibitItem.result.location}
                   </div>
                 </div>
                 <div style={{ marginTop: "9px", gap: "48.25px", display: "flex", flex: "absolute" }}>
@@ -226,7 +238,7 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
                       flex: "relative",
                     }}
                   >
-                    {exhibitItem.fee}
+                    {exhibitItem.result.fee}
                   </div>
                 </div>
                 <div style={{ marginTop: "9px", gap: "48.25px", display: "flex", flex: "absolute" }}>
@@ -259,7 +271,7 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
                       flex: "relative",
                     }}
                   >
-                    {exhibitItem.artist}
+                    {exhibitItem.result.artist}
                   </div>
                 </div>
                 <div style={{ marginTop: "9px", gap: "48.25px", display: "flex", alignItems: "center" }}>
@@ -311,7 +323,7 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
                         alignItems: "center",
                       }}
                     >
-                      {exhibitItem.rating}
+                      3.2
                     </div>
                   </div>
                 </div>
@@ -344,15 +356,15 @@ const Modal: React.FC<ModalProps> = ({ exhibitItem, closeModal }) => {
                     }}
                   >
                     <img
-                      src={exhibitItem.story.storyImg}
-                      alt="Story Image"
+                      src={exhibitItem.result.stories[0].storyImg} // Accessing storyImg property of the first story
+                      alt="Story 1"
                       width="147.83"
                       height="180.151"
                       style={{ width: "147.83px", height: "180.151px", flexShrink: 0, borderRadius: "8px" }}
                     />
                     <img
-                      src={exhibitItem.story.storyImg}
-                      alt="Story Image"
+                      src={exhibitItem.result.stories[1].storyImg} // Accessing storyImg property of the second story
+                      alt="Story 2"
                       width="147.83"
                       height="180.151"
                       style={{ width: "147.83px", height: "180.151px", flexShrink: 0, borderRadius: "8px" }}
