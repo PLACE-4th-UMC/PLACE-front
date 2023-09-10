@@ -102,7 +102,7 @@ function Groups() {
           <div style={{display:"flex", flexDirection: "row"}}>
       <div style={{ marginTop: "92px", marginLeft: "79px",  width: "605px", height: "98px", flexShrink: "0" }}>
           <div style={{ marginTop: "13px", marginLeft: "1px", marginRight: "2px", width: "605px", height: "95px", flexShrink: 0, color: "#484848", textAlign: "left", fontFamily: "Montserrat", fontSize: "36px", fontStyle: "normal", fontWeight: "700", lineHeight: "48px" }}>
-          사진 전시
+          전체 전시
           <div style={{ marginTop: "17px", marginBottom: "24px", marginRight: "0px", display: "center", width: "150px", height: "6px", flexShrink: 0, borderRadius: "3px", backgroundColor: "#E52A2A" }}></div>
           </div>
       </div>
